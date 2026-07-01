@@ -20,8 +20,22 @@ public class Main {
     }
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
-        System.out.print("Nhập số lượng phần tử của mảng: ");
-        int arr_lenght= sc.nextInt();
+        int arr_lenght = 0;
+        do {
+            System.out.print("Nhập số lượng phần tử của mảng: ");
+            if(sc.hasNextInt()){
+                arr_lenght=sc.nextInt();
+                if (arr_lenght<=0){
+                    System.out.println("Lỗi số lượng phần tử phải lớn hơn 0. Vui lòng nhập lại!");
+                }
+                else {
+                    break;
+                }
+            }else {
+                System.out.println("Lỗi số lượng phần tử phải là số nguyên. Vui lòng nhâọ lại!");
+                sc.next();
+            }
+        }while(true);
         int[] arr= new int[arr_lenght];
         System.out.println("Nhập các phần tử của mảng:");
         for (int i=0; i<arr.length;i++){
@@ -30,7 +44,7 @@ public class Main {
                 arr[i]=sc.nextInt();
             }
             else {
-                System.err.println("Lỗi vui lòng nhập lại");
+                System.out.println("Lỗi mảng phải là sô nguyên vui lòng nhập lại");
                 sc.next();
                 i--;
             }
@@ -39,8 +53,6 @@ public class Main {
         System.out.println("Mảng sau khi phàn tử sắp xếp giảm dần:");
         System.out.println(Arrays.toString(arr));
         sc.close();
-
-
     }
 }
 
