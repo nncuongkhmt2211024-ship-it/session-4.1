@@ -20,23 +20,23 @@ public class Main {
     }
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
-        int arr_lenght = 0;
+        int arr_length;
         do {
             System.out.print("Nhập số lượng phần tử của mảng: ");
             if(sc.hasNextInt()){
-                arr_lenght=sc.nextInt();
-                if (arr_lenght<=0){
+                arr_length=sc.nextInt();
+                if (arr_length<=0){
                     System.out.println("Lỗi số lượng phần tử phải lớn hơn 0. Vui lòng nhập lại!");
                 }
                 else {
                     break;
                 }
             }else {
-                System.out.println("Lỗi số lượng phần tử phải là số nguyên. Vui lòng nhâọ lại!");
+                System.out.println("Lỗi số lượng phần tử phải là số nguyên. Vui lòng nhập lại!");
                 sc.next();
             }
         }while(true);
-        int[] arr= new int[arr_lenght];
+        int[] arr= new int[arr_length];
         System.out.println("Nhập các phần tử của mảng:");
         for (int i=0; i<arr.length;i++){
             System.out.print("Nhập phần tử thứ "+ (i+1)+": ");
@@ -44,13 +44,13 @@ public class Main {
                 arr[i]=sc.nextInt();
             }
             else {
-                System.out.println("Lỗi mảng phải là sô nguyên vui lòng nhập lại");
+                System.out.println("Lỗi mảng phải là số nguyên vui lòng nhập lại");
                 sc.next();
                 i--;
             }
         }
         bubbleSort(arr);
-        System.out.println("Mảng sau khi phàn tử sắp xếp giảm dần:");
+        System.out.println("Mảng sau khi phần tử sắp xếp giảm dần:");
         System.out.println(Arrays.toString(arr));
         sc.close();
     }
